@@ -32,6 +32,6 @@ public class Login {
 //		cookie.setHttpOnly(true);
 		cookie.setMaxAge(60 * 5);
 		httpServletResponse.addCookie(cookie);
-		return "redirect:http://localhost:3000";
+		return "redirect:http://localhost:5173";
 	}
 }
