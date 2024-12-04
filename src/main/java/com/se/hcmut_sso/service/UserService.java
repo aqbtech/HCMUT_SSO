@@ -61,6 +61,13 @@ public class UserService {
 		return userMapper.toUserResponse(user);
 	}
 
+	public UserResponse getMyInfo(String name) {
+
+		User user = userRepository.findByUsername(name)
+				.orElseThrow(() -> new ServerException("User not found", HttpStatus.NOT_FOUND));
+		return userMapper.toUserResponse(user);
+	}
+
 	@PostAuthorize("returnObject.username == authentication.name")
 	public UserResponse updateUser(String userId, UserUpdateRequest request) {
 		User user = userRepository.findById(userId)
