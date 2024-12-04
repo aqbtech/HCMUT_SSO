@@ -40,6 +40,11 @@ public class UserApi {
 		return ResponseEntity.ok(userService.getMyInfo());
 	}
 
+	@GetMapping("/users/my-info/{username}")
+	ResponseEntity<?> getMyInfo(@PathVariable String username) {
+		return ResponseEntity.ok(userService.getMyInfo(username));
+	}
+
 	@DeleteMapping("/users/{userId}")
 	ResponseEntity<?> deleteUser(@PathVariable String userId) {
 		userService.deleteUser(userId);
