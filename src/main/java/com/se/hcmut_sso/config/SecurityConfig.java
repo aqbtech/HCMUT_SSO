@@ -68,6 +68,7 @@ public class SecurityConfig {
 			corsConfig.addAllowedOrigin("http://localhost:5173");
 			corsConfig.addAllowedMethod("*");
 			corsConfig.addAllowedHeader("*");
+			corsConfig.setAllowCredentials(true);
 			return corsConfig;
 		}));
 		return httpSecurity.authenticationManager(authenticationManager()).build();
@@ -78,6 +79,7 @@ public class SecurityConfig {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 
 		corsConfiguration.addAllowedOrigin(allowedOrigins);
+		corsConfiguration.addAllowedOrigin("http://localhost:5173");
 		corsConfiguration.addAllowedMethod("*");
 		corsConfiguration.addAllowedHeader("*");
 
