@@ -30,7 +30,7 @@ public class Login {
 		Cookie cookie = new Cookie("TOKEN", var1.getToken());
 		cookie.setPath("/");
 //		cookie.setHttpOnly(true);
-		cookie.setMaxAge(60 * 5);
+		cookie.setMaxAge(60 * 60 * 5);
 		httpServletResponse.addCookie(cookie);
 		return "redirect:http://localhost:5173";
 	}

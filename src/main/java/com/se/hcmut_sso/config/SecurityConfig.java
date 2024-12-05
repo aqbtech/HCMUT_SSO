@@ -74,20 +74,20 @@ public class SecurityConfig {
 		return httpSecurity.authenticationManager(authenticationManager()).build();
 	}
 
-	@Bean
-	public CorsFilter corsFilter() {
-		CorsConfiguration corsConfiguration = new CorsConfiguration();
-
-		corsConfiguration.addAllowedOrigin(allowedOrigins);
-		corsConfiguration.addAllowedOrigin("http://localhost:5173");
-		corsConfiguration.addAllowedMethod("*");
-		corsConfiguration.addAllowedHeader("*");
-
-		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
-
-		return new CorsFilter(urlBasedCorsConfigurationSource);
-	}
+//	@Bean
+//	public CorsFilter corsFilter() {
+//		CorsConfiguration corsConfiguration = new CorsConfiguration();
+//
+//		corsConfiguration.addAllowedOrigin(allowedOrigins);
+//		corsConfiguration.addAllowedOrigin("http://localhost:5173");
+//		corsConfiguration.addAllowedMethod("*");
+//		corsConfiguration.addAllowedHeader("*");
+//
+//		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+//		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+//
+//		return new CorsFilter(urlBasedCorsConfigurationSource);
+//	}
 
 	@Bean
 	JwtAuthenticationConverter jwtAuthenticationConverter() {
